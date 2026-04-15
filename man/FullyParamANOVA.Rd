@@ -20,10 +20,10 @@ FullyParamANOVA(
 
 \item{form}{To be written as \emph{Response variable ~ Explaining variable(s)}. If there are multiple \emph{Explaining variables}, they should be separated by a \emph{*}.}
 
-\item{variables_type}{Type of variables in a vector. One argument per \emph{Explaining variable}, in the same order as in the formula: 'Fxd' for Fixed variables, or 'Rndm' for Random variables.}
+\item{variables_type}{Type of factors in a vector. One argument per \emph{Explaining variable}, in the same order as in the formula: 'Fxd' for Fixed factors, or 'Rndm' for Random factors}
 
-\item{variables_relationships}{Relationships between variables in a vector. One argument per \emph{Explaining variable}, in the same order as in the formula:
-\emph{NA} if the variable is not nested in any other variable, or the name of the variable it is nested into.}
+\item{variables_relationships}{Relationships between factors in a vector. One argument per \emph{Explaining variable}, in the same order as in the formula:
+\emph{NA} if the factor is not nested in any other factor, or the name of the factor it is nested into.}
 
 \item{sig_threshold}{The threshold below which a p-value is considered significant. By default, it is set to the usual value of 0.05.}
 
@@ -55,13 +55,13 @@ The seventh column ("Sig") shows a star if the associated p-value is below the s
 The optional eighth column ("ges") gives the effect sizes (ges = generalized eta squared) associated with the effects tested.
 
 If the argument \emph{output_table_only} is \emph{FALSE} (which is the case by default), the function also specifies below this result table which types of Sum of Squares were used,
-and if there are at least two factors, it specifies which factors were fixed or random and finally the relationships between these factors.
+what is the response variable, which factors were fixed or random, and if there are at least two factors, it specifies the relationships between these factors.
 
 You will find warnings below if the setup is not appropriate.
 }
 \description{
 Function allowing the user to perform ANOVA tests (in a strict sense: one continuous and normally-distributed response variable and one or more factorial/categorical explaining variable(s)),
-with the possibility to specify the type of sum of squares (1, 2 or 3), the types of variables (Fixed or Random) and their relationships (crossed or nested).
+with the possibility to specify the type of sum of squares (1, 2 or 3), the types of factors (Fixed or Random) and their relationships (crossed or nested).
 This function is built on the '?rstatix::anova_test()'.The resulting ouptuts are the same as in 'SAS' software.
 }
 \examples{
