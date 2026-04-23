@@ -1429,7 +1429,7 @@ FullyParamANOVA<- function(InputData,form,variables_type=NULL,variables_relation
     cat(base::paste0("\nANOVA test with Type ",sum_of_squares, " Sum of Squares, and a significance threshold of ", sig_threshold))
 
     # Mention what was the response variable
-    cat(base::paste0("\nResponse variable: ",mlr3misc::extract_vars(Wingspan~Sex)$lhs))
+    cat(base::paste0("\nResponse variable: ",mlr3misc::extract_vars(form)$lhs))
 
     # Mention what were the types of the factors involved
     cat("\nFactors types: ")
